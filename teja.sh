@@ -55,26 +55,30 @@ if [ $? -eq 0 ]; then
 	    git commit -m "$commitMessage"
 
 
-            for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
+            for i in $(git show-ref --heads | sed 's/.*refs\/heads\///');
 
             do
+
 		    git log --oneline
 
 		    read cherrypick
 
+		    git checkout $i++ 
+
 		    git cherry-pick $cherrypick
 
 
-                    git push  $(branch)
-            done
+                    git push  $i++
 
+
+                   # git push origin $(branch)
+	   done
 
             
 	    echo "Files pushed to GitHub"
         
-    else
+
         
-	    echo " nothing to push "
        
     fi
 fi
