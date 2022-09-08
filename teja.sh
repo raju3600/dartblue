@@ -62,7 +62,7 @@ if [ $? -eq 0 ]; then
             do
 		    
 
-		    git checkout $i++
+		    git checkout $i+
 
 		    git log --oneline
 
