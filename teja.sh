@@ -53,8 +53,17 @@ if [ $? -eq 0 ]; then
 	    git add .
             
 	    git commit -m "$commitMessage"
-            
-	    git push
+
+
+            for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
+
+            do
+
+
+                    git push origin $(branch)
+            done
+
+
             
 	    echo "Files pushed to GitHub"
         
@@ -65,12 +74,12 @@ if [ $? -eq 0 ]; then
     fi
 fi
 
-for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
+#for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
 
-do 
+#do 
 	
 
-	git push origin $(branch) 
-done
+#	git push origin $(branch) 
+#done
 
 
