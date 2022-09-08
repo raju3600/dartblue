@@ -57,7 +57,10 @@ if [ $? -eq 0 ]; then
 	    git push
             
 	    echo "Files pushed to GitHub"
-
+        
+    else
+        
+	    echo " nothing to push "
        
     fi
 fi
