@@ -64,12 +64,13 @@ if [ $? -eq 0 ]; then
        
     fi
 fi
-#for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
 
-#do 
+for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
+
+do 
 	
 
-#	git push origin $(branch) 
-#done
+	git push origin $(branch) 
+done
 
 
