@@ -58,9 +58,14 @@ if [ $? -eq 0 ]; then
             for branch in $(git show-ref --heads | sed 's/.*refs\/heads\///');
 
             do
+		    git log --oneline
+
+		    read cherrypick
+
+		    git cherry-pick $cherrypick
 
 
-                    git push origin $(branch)
+                    git push  $(branch)
             done
 
 
