@@ -60,9 +60,12 @@ if [ $? -eq 0 ]; then
             for i in $(git show-ref --heads | sed 's/.*refs\/heads\///');
 
             do
-		    
+		   
 
-		    git checkout $i+
+		    git checkout $i
+
+		 
+
 
 		    git log --oneline
 
@@ -70,10 +73,8 @@ if [ $? -eq 0 ]; then
 
 		    git cherry-pick $commitid
 
-		    git log --oneline
 
-
-                    git push  $(i++)
+                    git push  $(i)
             done
 
 
